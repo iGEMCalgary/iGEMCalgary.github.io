@@ -224,8 +224,8 @@ html.no-touch .logo:hover                              { opacity: 1.0; }
   position: relative;
 }
 
-/* Technique taken from http://css-tricks.com/line-on-sides-headers/,
-   which in turn uses http://codepen.io/chriscoyier/pen/zDGkw. */
+/* Technique taken from https://css-tricks.com/line-on-sides-headers/,
+   which in turn uses https://codepen.io/chriscoyier/pen/zDGkw. */
 #content .header h1 span:before, #content .header h1 span:after {
   content: '';
   position: absolute;
