@@ -1,0 +1,198 @@
+#guide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1777px;
+  background-image: url('../images/guide_sponsors.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: scroll;
+  background-size: 1100px;
+  opacity: 0.5;
+  z-index: 9999;
+  display: none;
+}
+
+#testimonials-row {
+  text-align: center;
+}
+
+#testimonials {
+  display: inline-block;
+  text-align: left;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.testimonial {
+  margin-bottom: 45px;
+}
+
+.testimonial {
+  width: 294px;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+}
+
+.testimonial:first-child {
+  margin-right: 42px;
+}
+
+.testimonial .quote {
+  background-color: #cfe9e4;
+  border-radius: 9px;
+  padding: 42px 24px 36px 24px;
+  position: relative;
+}
+
+.testimonial .quotee {
+  margin-top: 23px;
+  position: relative;
+}
+
+/* Tweak padding to bring bottom of Jennifer Hill quote in line with Elizabeth
+ * Cannon quote. */
+#jennifer-hill .quote {
+  padding-bottom: 54px;
+}
+
+.testimonial .quotee .person {
+  margin-left: 10px;
+}
+
+.testimonial .quotee-logo {
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+}
+
+.testimonial#elizabeth-cannon .triangle {
+  margin-left: 117px;
+}
+
+.testimonial#elizabeth-cannon .quotee {
+  margin-left: 150px;
+}
+
+.testimonial#jennifer-hill .quotee {
+  margin-left: 130px;
+}
+
+.testimonial#jennifer-hill .triangle {
+  margin-left: 97px;
+}
+
+.testimonial#elizabeth-cannon .quotee-logo {
+  background-image: url('../images/sponsor-logos/original/university-of-calgary.png');
+  width: 78px;
+  height: 80px;
+  /* Push down so top of logo aligns with top of "Elizabth Cannon" text. */
+  left: -75px;
+
+  margin-top: 4px;
+}
+
+.testimonial#jennifer-hill .quotee-logo {
+  background-image: url('../images/sponsor-logos/original/aitf.png');
+  width: 113px;
+  height: 43px;
+  left: -111px;
+}
+
+.testimonial .triangle {
+  width: 56px;
+  height: 25px;
+  background-image: url('../images/testimonial_triangle.png');
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  z-index: 9999;
+}
+
+.testimonial .left-quote, .testimonial .right-quote {
+  background-image: url('../images/quote.png');
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 31px;
+  position: absolute;
+}
+
+.testimonial .left-quote {
+  left: 11px;
+  top: 11px;
+}
+
+.testimonial .right-quote {
+  bottom: 11px;
+  right: 11px;
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+}
+
+#partner-with-us {
+  margin-top: 10px !important;
+  text-align: center;
+}
+
+#partner-with-us h1 {
+  margin-top: 0;
+}
+
+#partner-with-us .button {
+  margin: 25px auto 0 auto;
+}
+
+#sponsor-logos .sponsor-logo {
+  background-color: #eaeaea;
+  border-radius: 9px;
+  width: 30%;
+  height: 140px;
+  margin: 16px 1.5% 16px 1.5%;
+  min-width: 235px; /* Should be (width of widest logo) + 10px. */
+  /* Display as inline block rather than floating, as this allows us to center
+   * the blocks within their container (via text-align:center on the parent),
+   * regardless of how many columns are currently displayed. */
+  display: inline-block;
+}
+
+#sponsor-logos .sponsor-logo .image {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* TODO: convert to CSS sprites, given poorly implemented nature of attribute. */
+/* To produce a series of colour/greyscale sprites:
+  for foo in *.png; do convert -colorspace gray $foo tmp.png && convert $foo tmp.png +append $foo && rm tmp.png; done
+ */
+.greyscale {
+  filter: url("data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'><filter%20id='grayscale'><feColorMatrix%20type='matrix'%20values='0.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200%200%200%201%200'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+  filter: gray; /* IE6+ */
+  filter: grayscale(100%); /* Current draft standard */
+  -webkit-filter: grayscale(100%); /* New WebKit */
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  transition: all 0.5s;
+  opacity: 0.8;
+}
+html.no-touch .greyscale:hover {
+  filter: none;
+  -webkit-filter: none;
+  -moz-filter: none;
+  -ms-filter: none;
+  -o-filter: none;
+  opacity: 1.0;
+}
+
+#sponsor-logos-wrapper {
+  text-align: center;
+}

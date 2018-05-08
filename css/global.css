@@ -1,0 +1,291 @@
+#guide {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 2399px;
+  background-image: url('../images/guide_home.png');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: scroll;
+  opacity: 0.5;
+  z-index: 9999;
+  display: none;
+}
+
+
+/******
+ Global
+ ******/
+/* html element will have no-touch class when user *is not* on a touch device.
+Thus, can use this class so that hover states are only applied on non-touch
+devices. Such states on touch devices are usually triggered by a finger tap,
+which is undesirable -- on this site, after tapping the "Learn more" button,
+the button will remain in its hover state until the user taps another link on
+the page.
+
+Note that we eliminate text-decoration on hover, even on touch devices. (All
+other :hover selectors are preceded by html.no-touch.) This stops links from
+remaining underlined after user taps on them. */
+a:hover    { text-decoration: none; }
+
+body > div { position: relative; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  line-height: 140%;
+}
+
+/* Constrain Bootstrap's defualt container width to better accommodate layout.
+ * At screen widths <1200px, Bootstrap already forces .container to have
+ * max-width <1000px. */
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1000px;
+  }
+}
+
+.button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  display: block;
+  width: 193px;
+  height: 43px;
+  background-image: url('../images/button_background.png');
+  text-transform: uppercase;
+  text-align: center;
+  color: #3c615f;
+  vertical-align: middle;
+  line-height: 42px;
+  text-shadow: 1px 1px 2px #fff;
+  border-style: none;
+  background-color: transparent;
+}
+
+html.no-touch .button:hover {
+  background-position: -193px 0;
+  color: #f4f4f4;
+  text-shadow: 0 0;
+}
+
+
+/******
+ Header
+ ******/
+/* Header bars come in minimal and full varieties. Full is displayed only on
+ * wide displays, and only when user scrolls past certain point. Minimal is
+ * displayed only on mobile. */
+.header-bar         { z-index: 10; }
+.header-bar.minimal { display: none; }
+
+/* Full header bar for wide displays. */
+.header-bar.full {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+
+.header-bar.full .header-content {
+  margin-top: 37px;
+  padding-top: 19px;
+  height: 87px;
+  background-color: #fbfbfb;
+}
+
+
+/************
+ Link colours
+ ************/
+.header-bar.full .primary-navbar a                     { color: #4a8582; }
+html.no-touch .header-bar.full .primary-navbar a:hover { color: #5faba7; }
+.header-bar.full .secondary-navbar a                   { color: #747171; }
+.header-bar.full .secondary-navbar a:hover             { color: #4d4b4b; }
+html.no-touch #footer-navbar a:hover                   { color: #fff; }
+
+.header-bar.full .secondary-navbar                     { background-color: #efefef; }
+html.no-touch .logo:hover                              { opacity: 1.0; }
+
+
+/*************************
+ Secondary navbar
+ Displayed at top of page.
+ *************************/
+.secondary-navbar {
+  width: 100%;
+  height: 37px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.secondary-navbar ul {
+  list-style-type: none;
+  margin: 0;
+  margin-top: 9px;
+}
+
+.secondary-navbar li {
+  text-transform: uppercase;
+  padding-left: 20px;
+  float: right;
+}
+
+
+.secondary-navbar a {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+
+/*************************************************
+ Primary navbar
+ Displayed beneath secondary navbar at top of page
+/*************************************************/
+.primary-navbar {
+  float: right;
+  margin: 22px 0 0 0;
+}
+
+.primary-navbar ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+.primary-navbar a {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 20px 13px 13px 13px;
+}
+
+.primary-navbar li               { float: right; }
+.primary-navbar li:first-child a { padding-right: 0; } 
+.primary-navbar li:last-child a  { padding-left: 0; }
+
+
+/****
+ Logo
+ ****/
+/* Displayed when scroll position is below trigger point. */
+.header-bar.full .logo { background-image: url('../images/igem_calgary_logo_grey.png'); }
+
+.logo {
+  background-repeat: no-repeat;
+  width: 196px;
+  height: 48px;
+  float: left;
+  opacity: 0.9;
+}
+
+
+/*********************
+ Primary page content.
+ *********************/
+#content {
+  background-image: url('../images/background_pattern.png');
+  background-color: #fbfbfb;
+  z-index: 1;
+  margin-top: 125px;
+  padding: 30px 0 30px 0;
+}
+
+#content h1 {
+  color: #4a8482;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 29px;
+  text-align: center;
+}
+
+
+#content p {
+  font-family: 'Roboto', sans-serif;
+  line-height: 140%;
+}
+
+#content .header h1 {
+  font-size: 21px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  /* Hide lines to left and right of headers. */
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+#content .header h1 span {
+  display: inline-block;
+  position: relative;
+}
+
+/* Technique taken from http://css-tricks.com/line-on-sides-headers/,
+   which in turn uses http://codepen.io/chriscoyier/pen/zDGkw. */
+#content .header h1 span:before, #content .header h1 span:after {
+  content: '';
+  position: absolute;
+  /* Value should be same as font size of parent h1, I believe. */
+  top: 21px;
+  display: block;
+  width: 1000px;
+  height: 0px;
+  /* Old border colour: #b1b1b1 */
+  border-top: 1px solid #e2e2e2;
+}
+
+#content .header h1 span:before {
+  right: 100%;
+  margin-right: 10px;
+}
+
+#content .header h1 span:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+#content .header:not(.first) {
+  margin-top: 40px;
+}
+
+
+/******
+ Footer
+ ******/
+#footer {
+  background-color: #4a8582;
+  padding-bottom: 45px;
+}
+
+#footer-navbar {
+  margin: 75px 0 80px 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+#footer-navbar li {
+  display: inline;
+  padding-left: 25px;
+}
+
+#footer-navbar li:first-child {
+  padding-left: 0;
+}
+
+#footer-navbar a {
+  color: #c6e3e2;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+#igem-logo {
+  margin: 0 auto 0 auto;
+  width: 93px;
+  height: 75px;
+  background-image: url('../images/igem_logo.png');
+}

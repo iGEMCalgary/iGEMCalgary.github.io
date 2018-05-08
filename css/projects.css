@@ -1,0 +1,122 @@
+#guide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 770px;
+  background-image: url('../images/guide_projects.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: scroll;
+  opacity: 0.5;
+  z-index: 9999;
+  display: none;
+}
+
+.project {
+  padding: 30px 0 30px 0;
+  border-top: 1px solid #e2e2e2;
+}
+
+.project:first-child {
+  padding-top: 0px;
+  border-top-style: none;
+}
+
+.project .project-thumbnail {
+  background-image: url('../images/project_thumbnail_2013.jpg');
+  background-repeat: no-repeat;
+  width: 302px;
+  height: 160px;
+  position: relative;
+}
+
+.project .project-thumbnail .cover {
+  width: 100%;
+  height: 100%;
+  background-color: #73c1e2;
+  transition: all 0.5s;
+  opacity: 0.38;
+  pointer-events: none;
+}
+
+.project .project-thumbnail-container .year {
+  /*color: #4a8582;*/
+  color: #8fd3d6;
+  color: #a7f7fa;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: -2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*background-color: #97dad0;*/
+  background-color: #589ca6;
+  text-align: center;
+  line-height: 100%;
+  padding-top: 15px;
+  transition: all 0.5s;
+  margin: 10px 0 0 10px;
+}
+
+.project .project-thumbnail, .project .synopsis {
+  cursor: pointer;
+}
+
+.project.active .project-thumbnail .year,
+  .project:hover .project-thumbnail .year {
+  background-color: #df705f;
+  color: #fff;
+  left: -80px;
+}
+
+.project {
+  text-align: center;
+}
+
+.project .project-description {
+  width: 50%;
+  min-width: 302px;
+  padding-left: 15px;
+}
+
+.project .project-thumbnail-container, .project .project-description {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+}
+
+.project .project-description h2 {
+  color: #4a8582;
+  font-size: 19px;
+  line-height: 130%;
+  font-weight: 700;
+  margin-top: 10px;
+  transition: all 0.5s;
+}
+
+.project.active .project-thumbnail .cover, .project:hover .project-thumbnail .cover {
+  opacity: 0;
+}
+
+.project.active .project-description h2, .project:hover .project-description h2 {
+  color: #df705f;
+}
+
+.project .project-description .synopsis {
+  max-width: 400px;
+}
+
+.project .full-description {
+  font-size: 12px;
+  display: none;
+}
+
+.project .full-description h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 0 0;
+}

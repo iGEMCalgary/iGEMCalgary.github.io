@@ -1,0 +1,8 @@
+.project.active .project-thumbnail .year,
+  .project:hover .project-thumbnail .year {
+  left: 0;
+}
+
+.project .project-description {
+  padding-left: 0;
+}

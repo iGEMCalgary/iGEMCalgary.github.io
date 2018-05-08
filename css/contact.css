@@ -1,0 +1,41 @@
+#contact-icons {
+  text-align: center;
+}
+
+#contact-icons .contact-icon {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-size: 140px;
+  background-repeat: no-repeat;
+}
+
+html.no-touch #contact-icons .contact-icon:hover {
+  background-position: -70px 0;
+}
+
+#twitter-icon {
+  background-image: url('../images/twitter.png');
+}
+
+#facebook-icon {
+  background-image: url('../images/facebook.png');
+}
+
+input, textarea, button {
+  margin-bottom: 14px;
+}
+
+#send-message {
+  margin-top: 10px;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* Tighten up spacing across page. */
+#content .header h1 {
+  margin-top: 0;
+}
